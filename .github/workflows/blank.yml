@@ -1,36 +1,1241 @@
-# This is a basic workflow to help you get started with Actions
+Here’s a clean, modern HTML template you can use as your standalone 2026 profile site. It’s structured for ultra‑visual sections and easy later mapping into B12. [aremi-synergy.b12sites](https://aremi-synergy.b12sites.com)
 
-name: CI
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aremo Temmy Group - Connecting Global Trade</title>
+  <meta name="description" content="Aremo Temmy Group is a Nigerian-rooted, globally connected trade and logistics group helping manufacturers, traders, and agencies move commodities and cargo across continents with precision and compliance." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-dark: #020617;
+      --bg-section: #020617;
+      --bg-alt: #020617;
+      --teal: #14f4c9;
+      --teal-soft: rgba(20, 244, 201, 0.15);
+      --teal-border: rgba(20, 244, 201, 0.3);
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.8);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-pill: 999px;
+      --blur-xl: 48px;
+    }
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, rgba(20, 244, 201, 0.06), transparent 54%),
+                  radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.06), transparent 50%),
+                  #020617;
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+    .page-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom,
+        rgba(2, 6, 23, 0.98),
+        rgba(2, 6, 23, 0.92),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 20px 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-pill {
+      width: 42px;
+      height: 42px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(20, 244, 201, 0.18), transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(56, 189, 248, 0.16), transparent 60%),
+        rgba(15, 23, 42, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .nav-logo-pill span {
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    .nav-title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-title-main {
+      font-size: 0.94rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .nav-title-sub {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(148, 163, 184, 0.9);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(148, 163, 184, 0.95);
+    }
+
+    .nav-links a {
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+      border-color: rgba(20, 244, 201, 0.5);
+    }
+
+    .nav-cta {
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: linear-gradient(120deg, rgba(20, 244, 201, 0.12), rgba(56, 189, 248, 0.1));
+      color: #f9fafb;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-cta span {
+      font-size: 0.85em;
+    }
+
+    .nav-cta:hover {
+      border-color: rgba(20, 244, 201, 0.9);
+      box-shadow: 0 18px 40px rgba(20, 244, 201, 0.25);
+    }
+
+    .nav-mobile-toggle {
+      display: none;
+    }
+
+    .page-main {
+      flex: 1;
+    }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 22px 20px 32px 20px;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+      padding: 26px 0 40px 0;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px 4px 5px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: radial-gradient(circle at 0 0, rgba(20, 244, 201, 0.26), transparent 52%),
+                  radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.24), transparent 56%),
+                  rgba(15, 23, 42, 0.98);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(226, 232, 240, 0.92);
+    }
+
+    .hero-kicker-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(20, 244, 201, 0.7);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(20, 244, 201, 0.7), transparent 60%),
+        rgba(15, 23, 42, 0.98);
+      box-shadow: 0 0 25px rgba(20, 244, 201, 0.8);
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 3vw, 2.7rem);
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #f9fafb;
+    }
+
+    .hero-title span {
+      display: block;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg, #14f4c9, #38bdf8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-body {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .hero-metas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(156, 163, 175, 0.92);
+    }
+
+    .hero-metas span {
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #14f4c9, #38bdf8);
+      color: #020617;
+      font-weight: 600;
+      box-shadow: 0 18px 45px rgba(20, 244, 201, 0.25);
+      border-color: rgba(15, 23, 42, 0.9);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.96);
+      border-color: rgba(148, 163, 184, 0.7);
+      color: rgba(226, 232, 240, 0.95);
+    }
+
+    .btn-secondary span {
+      font-size: 1.1em;
+    }
+
+    .hero-right {
+      position: relative;
+      min-height: 260px;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      background:
+        radial-gradient(circle at 0 0, rgba(20, 244, 201, 0.16), transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.16), transparent 55%),
+        rgba(15, 23, 42, 0.98);
+      padding: 18px 18px 16px 18px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      isolation: isolate;
+      height: 100%;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 10px;
+    }
+
+    .hero-card-title {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(226, 232, 240, 0.96);
+    }
+
+    .hero-card-badge {
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(20, 244, 201, 0.6);
+      color: rgba(209, 250, 229, 0.96);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .hero-card-block {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
+      padding: 12px 13px;
+    }
+
+    .hero-card-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(148, 163, 184, 0.98);
+      margin-bottom: 6px;
+    }
+
+    .hero-card-metric {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .hero-card-foot {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.68rem;
+      color: rgba(148, 163, 184, 0.98);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .hero-card-foot span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .hero-card-foot span::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(20, 244, 201, 0.8);
+      box-shadow: 0 0 10px rgba(20, 244, 201, 0.9);
+    }
+
+    .hero-card-orbit {
+      position: absolute;
+      inset: 10px;
+      border-radius: var(--radius-xl);
+      border: 1px dashed rgba(148, 163, 184, 0.35);
+      opacity: 0.4;
+    }
+
+    .hero-card-glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(20, 244, 201, 0.21), transparent 52%),
+        radial-gradient(circle at 80% 100%, rgba(56, 189, 248, 0.18), transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    /* Sections */
+    section {
+      margin-top: 34px;
+      padding: 22px 22px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.97));
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.9);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(20, 244, 201, 0.08), transparent 58%),
+        radial-gradient(circle at 90% 100%, rgba(56, 189, 248, 0.08), transparent 58%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(226, 232, 240, 0.95);
+    }
+
+    .section-subtitle {
+      font-size: 0.8rem;
+      color: rgba(148, 163, 184, 0.94);
+      max-width: 420px;
+    }
+
+    .section-grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(156, 163, 175, 0.96);
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(20, 244, 201, 0.9);
+      box-shadow: 0 0 10px rgba(20, 244, 201, 0.9);
+    }
+
+    .about-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .values-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .values-list span {
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(209, 213, 219, 0.98);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.99));
+      padding: 12px 12px 11px 12px;
+    }
+
+    .card-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(148, 163, 184, 0.96);
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #f9fafb;
+      margin-bottom: 3px;
+    }
+
+    .card-text {
+      font-size: 0.8rem;
+      color: rgba(156, 163, 175, 0.96);
+    }
+
+    .stack-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: rgba(156, 163, 175, 0.96);
+    }
+
+    .stack-item strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.72rem;
+      color: rgba(156, 163, 175, 0.96);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .stat {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      padding: 6px 11px;
+      font-size: 0.78rem;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      color: rgba(209, 213, 219, 0.96);
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .stat span {
+      font-size: 0.8rem;
+      color: rgba(148, 163, 184, 0.96);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .contact-details {
+      font-size: 0.84rem;
+      color: rgba(209, 213, 219, 0.96);
+    }
+
+    .contact-details p {
+      margin-bottom: 6px;
+    }
+
+    .contact-form {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 10px 12px 12px 12px;
+      font-size: 0.8rem;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .form-row-col {
+      flex: 1;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(156, 163, 175, 0.96);
+      margin-bottom: 3px;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.8);
+      background: rgba(15, 23, 42, 0.96);
+      color: #e5e7eb;
+      padding: 6px 10px;
+      font-size: 0.8rem;
+    }
+
+    .form-textarea {
+      border-radius: 16px;
+      min-height: 70px;
+      resize: vertical;
+      padding-top: 7px;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: rgba(20, 244, 201, 0.8);
+      box-shadow: 0 0 0 1px rgba(20, 244, 201, 0.3);
+    }
+
+    .form-submit {
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      padding: 8px 15px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: linear-gradient(135deg, #14f4c9, #38bdf8);
+      color: #020617;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .footer {
+      padding: 18px 20px 22px 20px;
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      margin-top: 10px;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.72rem;
+      color: rgba(148, 163, 184, 0.98);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .footer-locations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .footer-locations span {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+      .section-grid-two,
+      .cards-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+      .nav-mobile-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        background: rgba(15, 23, 42, 0.98);
+        font-size: 0.9rem;
+        color: rgba(226, 232, 240, 0.96);
+      }
+      section {
+        padding: 18px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <!-- NAV -->
+    <header class="nav-wrap">
+      <div class="nav-inner">
+        <div class="nav-left">
+          <div class="nav-logo-pill">
+            <span>ATG</span>
+          </div>
+          <div class="nav-title">
+            <div class="nav-title-main">AREMO TEMMY GROUP</div>
+            <div class="nav-title-sub">GLOBAL TRADE & LOGISTICS</div>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#subsidiaries">Subsidiaries</a>
+          <a href="#services">Services</a>
+          <a href="#products">Products</a>
+          <a href="#network">Network</a>
+          <a href="#certifications">Compliance</a>
+          <a href="#leadership">Leadership</a>
+          <a href="#contact">Contact</a>
+          <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            <span>Request Quote</span>
+          </button>
+        </nav>
+        <button class="nav-mobile-toggle" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          →
+        </button>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <div class="shell">
+        <!-- HERO -->
+        <section class="hero" id="home">
+          <div class="hero-left">
+            <div class="hero-kicker">
+              <div class="hero-kicker-dot"></div>
+              <span>Connecting Global Trade</span>
+            </div>
+            <h1 class="hero-title">
+              <span>Delivering</span>
+              <span class="hero-highlight">Beyond Borders</span>
+            </h1>
+            <p class="hero-body">
+              Aremo Temmy Group is a Nigerian-rooted, globally connected trade and logistics group helping manufacturers, traders, and agencies move commodities and cargo across Africa, Europe, Asia, and North America with precision and compliance.
+            </p>
+            <div class="hero-metas">
+              <span>Export & logistics</span>
+              <span>Minerals & agro commodities</span>
+              <span>Trade documentation</span>
+            </div>
+            <div class="hero-ctas">
+              <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                Request trade & logistics quote
+              </button>
+              <button class="btn-secondary">
+                <span>⭳</span> Download 2026 company profile (PDF)
+              </button>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="hero-card">
+              <div class="hero-card-header">
+                <div>
+                  <div class="hero-card-title">AREMO TEMMY GROUP • 2026</div>
+                  <div style="font-size:0.72rem;color:rgba(148,163,184,0.96);margin-top:3px;">
+                    Integrated logistics, exports, and trade support from Lagos to the world.
+                  </div>
+                </div>
+                <div class="hero-card-badge">GROUP PROFILE</div>
+              </div>
+              <div class="hero-card-grid">
+                <div class="hero-card-block">
+                  <div class="hero-card-label">VALUE CHAIN</div>
+                  <div class="hero-card-metric">Source → Store → Ship</div>
+                  <div style="margin-top:6px;font-size:0.76rem;color:rgba(156,163,175,0.96);">
+                    Subsidiaries covering sourcing, warehousing, logistics, and trade documentation for cohesive, end-to-end execution.
+                  </div>
+                </div>
+                <div class="hero-card-block">
+                  <div class="hero-card-label">FOCUS</div>
+                  <div class="hero-card-metric">Minerals & Agro</div>
+                  <div style="margin-top:6px;font-size:0.76rem;color:rgba(156,163,175,0.96);">
+                    Targeted commodities where we can guarantee traceability, quality, and compliance.
+                  </div>
+                </div>
+              </div>
+              <div class="hero-card-foot">
+                <span>Group structure • Nigeria-based HQ</span>
+                <span>Multi-continent partner network</span>
+              </div>
+              <div class="hero-card-orbit"></div>
+              <div class="hero-card-glow"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+          <div class="section-header">
+            <div>
+              <div class="section-title">About Aremo Temmy Group</div>
+            </div>
+            <p class="section-subtitle">
+              A Nigerian-rooted, globally aligned trade and logistics group operating as an integrated ecosystem of subsidiaries across sourcing, warehousing, logistics, and trade documentation.
+            </p>
+          </div>
+          <div class="section-grid-two">
+            <div>
+              <div class="pill">
+                <div class="pill-dot"></div>
+                <span>Who we are</span>
+              </div>
+              <p class="about-body">
+                Aremo Temmy Group is a registered Nigerian enterprise focused on mineral exports, agro-commodity sourcing, logistics, and international trade facilitation under a compliant corporate structure. We operate as a group of specialized subsidiaries, each focused on a critical link in the value chain: sourcing, warehousing, freight, and trade documentation.
+              </p>
+              <p class="about-body">
+                Our mission is to make West African trade feel seamless for global buyers and local producers through dependable logistics, clear communication, and strict regulatory compliance.
+              </p>
+              <div class="values-list">
+                <span>Transparency</span>
+                <span>Regulatory compliance</span>
+                <span>Operational reliability</span>
+                <span>Long-term partnerships</span>
+              </div>
+            </div>
+            <div>
+              <div class="stack-list">
+                <div class="stack-item">
+                  <strong>Headquarters:</strong> Lagos, Nigeria – coordinating multi-continent shipments and partner relationships.
+                </div>
+                <div class="stack-item">
+                  <strong>Core capabilities:</strong> Exports, logistics, warehousing, and trade documentation support for manufacturers and traders.
+                </div>
+                <div class="stack-item">
+                  <strong>Clients & partners:</strong> International buyers, regional distributors, and local producers seeking structured, compliant trade from West Africa.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SUBSIDIARIES -->
+        <section id="subsidiaries">
+          <div class="section-header">
+            <div class="section-title">Group subsidiaries</div>
+            <p class="section-subtitle">
+              Four specialized entities working together to manage your trade journey from sourcing and documentation to warehousing and final delivery.
+            </p>
+          </div>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-label">01 • Logistics</div>
+              <div class="card-title">Aremo Temmy Global Logistics Ltd</div>
+              <p class="card-text">
+                End-to-end freight, customs coordination, and cross-border delivery across West Africa and key global corridors.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-label">02 • Exports</div>
+              <div class="card-title">Aremo Temmy Mineral & Agro Exports Ltd</div>
+              <p class="card-text">
+                Sourcing, quality control, and export handling for solid minerals and agro commodities, aligned with buyer specifications.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-label">03 • Warehousing</div>
+              <div class="card-title">Aremo Temmy Warehousing & Distribution Ltd</div>
+              <p class="card-text">
+                Strategic storage, consolidation, and last-mile distribution for domestic and export cargo.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-label">04 • Compliance</div>
+              <div class="card-title">Aremo Temmy Trade & Compliance Services</div>
+              <p class="card-text">
+                Regulatory documentation, certifications support, and advisory for exporters and importers engaging with West African markets.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services">
+          <div class="section-header">
+            <div class="section-title">What we do</div>
+            <p class="section-subtitle">
+              Integrated services combining logistics, sourcing, warehousing, and compliance to make complex trade flows more predictable and transparent.
+            </p>
+          </div>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-title">Export & Import Logistics</div>
+              <p class="card-text">
+                Sea, air, and road logistics from Nigeria and West Africa to global ports, including consolidation, freight booking, and cargo tracking.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-title">Mineral & Agro Commodity Sourcing</div>
+              <p class="card-text">
+                Qualified sourcing of target minerals and agro commodities with field verification, quality checks, and documentation.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-title">Warehousing & Inventory Management</div>
+              <p class="card-text">
+                Secure, well-located storage for bulk and palletized goods, with consolidation and flexible loading options.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-title">Trade Documentation & Compliance</div>
+              <p class="card-text">
+                Support with export permits, inspections, and certifications required by authorities and buyers.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-title">Project & Contract Logistics</div>
+              <p class="card-text">
+                Tailored logistics setups for long-term contracts, seasonal exports, and multi-shipment projects.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section id="products">
+          <div class="section-header">
+            <div class="section-title">Products & commodities</div>
+            <p class="section-subtitle">
+              Commodity categories where we focus our capabilities and partner network to deliver quality and compliance.
+            </p>
+          </div>
+          <div class="section-grid-two">
+            <div>
+              <p class="about-body">
+                We concentrate on commodities where we can guarantee traceability, consistency, and compliance with buyer specifications across the entire supply chain.
+              </p>
+              <div class="chips-row">
+                <div class="chip">Solid minerals</div>
+                <div class="chip">Agro commodities (e.g., hibiscus, sesame, ginger)</div>
+                <div class="chip">Processed/export-ready packaging</div>
+                <div class="chip">Custom specifications on request</div>
+              </div>
+            </div>
+            <div>
+              <div class="stack-list">
+                <div class="stack-item">
+                  <strong>Quality focus:</strong> Defined product specs, packaging standards, and inspection support aligned with buyer requirements.
+                </div>
+                <div class="stack-item">
+                  <strong>Supply approach:</strong> Controlled sourcing, field verification, and structured documentation from origin to loading.
+                </div>
+                <div class="stack-item">
+                  <strong>Flexibility:</strong> From trial orders to recurring shipments and framework contracts.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NETWORK -->
+        <section id="network">
+          <div class="section-header">
+            <div class="section-title">Global network & footprint</div>
+            <p class="section-subtitle">
+              Coordinating shipments from Lagos to key destinations across Africa, Europe, Asia, and North America through a growing network of warehouses, agents, and logistics partners.
+            </p>
+          </div>
+          <div class="section-grid-two">
+            <div>
+              <p class="about-body">
+                Our Lagos base anchors our operations, while partner locations and warehouses extend our reach into critical trade corridors. We coordinate export flows, consolidation, and last-mile deliveries through vetted partners and local specialists.
+              </p>
+              <div class="chips-row">
+                <div class="chip">Lagos, Nigeria (HQ)</div>
+                <div class="chip">Africa corridors</div>
+                <div class="chip">Europe</div>
+                <div class="chip">Asia</div>
+                <div class="chip">North America</div>
+              </div>
+            </div>
+            <div>
+              <div class="stats-row">
+                <div class="stat">
+                  3+ continents
+                  <span>served through partners</span>
+                </div>
+                <div class="stat">
+                  Multi-port options
+                  <span>aligned with trade lanes</span>
+                </div>
+                <div class="stat">
+                  Growing network
+                  <span>warehouses & agents</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section id="certifications">
+          <div class="section-header">
+            <div class="section-title">Compliance & governance</div>
+            <p class="section-subtitle">
+              Operating under Nigerian corporate law with a focus on documentation, safety, and quality for every shipment.
+            </p>
+          </div>
+          <div class="section-grid-two">
+            <div>
+              <p class="about-body">
+                We take a structured approach to compliance, combining local legal requirements with buyer and destination country expectations. Our teams work with recognized inspection and testing partners where required and maintain internal checklists for KYC, cargo quality, and documentation.
+              </p>
+              <div class="chips-row">
+                <div class="chip">Registered under CAMA</div>
+                <div class="chip">Documentation-first approach</div>
+                <div class="chip">Inspection partners on demand</div>
+              </div>
+            </div>
+            <div>
+              <div class="stack-list">
+                <div class="stack-item">
+                  <strong>Corporate structure:</strong> Nigerian-registered entities serving local and international partners.
+                </div>
+                <div class="stack-item">
+                  <strong>Documentation:</strong> Export permits, contracts, inspections, and certifications aligned with buyer needs.
+                </div>
+                <div class="stack-item">
+                  <strong>Assurance:</strong> Transparent communication around requirements, timelines, and obligations.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEADERSHIP -->
+        <section id="leadership">
+          <div class="section-header">
+            <div class="section-title">Leadership & values</div>
+            <p class="section-subtitle">
+              Guided by experienced management with roots in freight forwarding, export documentation, and field operations in Lagos and key trade corridors.
+            </p>
+          </div>
+          <div class="section-grid-two">
+            <div>
+              <p class="about-body">
+                Aremo Temmy Group is led by Managing Director ANIFOWOSE ABDULQUODRI TEMIDIRE, supported by a lean management team that combines operational experience with a commitment to ethical trade and long-term partnerships.
+              </p>
+              <div class="values-list">
+                <span>Transparency in pricing & documentation</span>
+                <span>Responsiveness to partner timelines</span>
+                <span>Safety & regulatory compliance</span>
+              </div>
+            </div>
+            <div>
+              <div class="stats-row">
+                <div class="stat">
+                  Relationship-first
+                  <span>approach to trade</span>
+                </div>
+                <div class="stat">
+                  Structured processes
+                  <span>for each shipment</span>
+                </div>
+                <div class="stat">
+                  Long-term outlook
+                  <span>for global partners</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+          <div class="section-header">
+            <div class="section-title">Contact & next steps</div>
+            <p class="section-subtitle">
+              Tell us what you want to ship, from where, and to which destination, and our team will respond with route options, timelines, and documentation guidance.
+            </p>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-details">
+              <p><strong>Head office – Lagos, Nigeria</strong></p>
+              <p>Address: [Your full Lagos address here]</p>
+              <p>Phone / WhatsApp: [+234 ...]</p>
+              <p>Email: [operations or exports email]</p>
+              <p style="margin-top:10px;">
+                For partnership, sourcing, or logistics enquiries, kindly share brief details of your cargo, origin, destination, and timelines. Our team will respond with next steps.
+              </p>
+            </div>
+            <form class="contact-form">
+              <div class="form-row">
+                <div class="form-row-col">
+                  <label class="form-label">Name</label>
+                  <input class="form-input" type="text" name="name" placeholder="Your full name" />
+                </div>
+                <div class="form-row-col">
+                  <label class="form-label">Company</label>
+                  <input class="form-input" type="text" name="company" placeholder="Your company" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-row-col">
+                  <label class="form-label">Email</label>
+                  <input class="form-input" type="email" name="email" placeholder="you@example.com" />
+                </div>
+                <div class="form-row-col">
+                  <label class="form-label">Phone / WhatsApp</label>
+                  <input class="form-input" type="tel" name="phone" placeholder="+234 ..." />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-row-col">
+                  <label class="form-label">What do you need?</label>
+                  <select class="form-select" name="service">
+                    <option value="">Select</option>
+                    <option value="logistics">Export / import logistics</option>
+                    <option value="sourcing">Commodity sourcing</option>
+                    <option value="warehousing">Warehousing / distribution</option>
+                    <option value="documentation">Documentation & compliance</option>
+                    <option value="other">Other / mixed</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-row-col">
+                  <label class="form-label">Brief details</label>
+                  <textarea class="form-textarea" name="message" placeholder="Cargo type, origin, destination, approximate timelines..."></textarea>
+                </div>
+              </div>
+              <button type="submit" class="form-submit">
+                Send enquiry
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>© 2026 Aremo Temmy Group. All rights reserved.</div>
+        <div class="footer-locations">
+          <span>Lagos</span>
+          <span>Africa corridors</span>
+          <span>Europe</span>
+          <span>Asia</span>
+          <span>North America</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
+```
+
+Next step:  
+- Replace placeholder address, phones, and emails with your real details.  
+- Tell me when you’re ready, and I’ll map these same sections into precise B12 blocks (hero type, features, stats, contact form) so you can rebuild it inside your B12 site.
